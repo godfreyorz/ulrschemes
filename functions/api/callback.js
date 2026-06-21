@@ -44,15 +44,18 @@ export async function onRequestGet(context) {
   }
 
   // Step 3: 返回 HTML，通过 postMessage 把 token 传给 CMS 父窗口
+  const token = tokenData.access_token;
   const html = `<!DOCTYPE html>
 <html><body>
 <script>
 (function() {
-  window.opener && window.opener.postMessage(
-    "verifier:${tokenData.access_token}",
-    "*"
-  );
-  setTimeout(function(){ window.close(); }, 1000);
+  var token = "${token}";
+  // 尝试所有 Decap CMS 可能的消息格式
+  if (window.opener) {
+    window.opener.postMessage("token:" + token, "*");
+    window.opener.postMessage(token, "*");
+  }
+  setTimeout(function(){ window.close(); }, 1500);
 })();
 </script>
 <p>Authenticating...</p>
