@@ -3,7 +3,7 @@ backend:
   repo: godfreyorz/urlschemes
   branch: main
   squash_merges: false
-  base_url: https://ulrschemes.pages.dev
+  base_url: https://urlschemes.pages.dev
   auth_endpoint: /api/callback
 
 media_folder: static/upload
