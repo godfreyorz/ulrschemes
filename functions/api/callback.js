@@ -43,16 +43,35 @@ export async function onRequestGet(context) {
     return new Response('Authentication failed', { status: 401 });
   }
 
-  // Step 3: 返回 HTML，通过 postMessage 把 token 传给 CMS 父窗口
+  // Step 3: 返回 HTML，通过 Netlify Identity 协议与 Decap CMS 完成认证握手
   const token = tokenData.access_token;
   const html = `<!DOCTYPE html>
 <html><body>
 <script>
 (function() {
-  if (window.opener) {
-    window.opener.postMessage("${token}", "*");
+  var ORIGIN = window.location.origin;
+
+  // 第 1 步: 通知父窗口开始授权
+  if (!window.opener) return;
+  window.opener.postMessage("authorizing:github", ORIGIN);
+
+  // 第 2 步: 等待父窗口确认后，发送 token
+  function onMessage(e) {
+    if (e.origin !== ORIGIN) return;
+    if (e.data === "authorizing:github") {
+      window.removeEventListener("message", onMessage);
+      var payload = JSON.stringify({
+        token: "${token}",
+        provider: "github"
+      });
+      window.opener.postMessage(
+        "authorization:github:success:" + payload,
+        ORIGIN
+      );
+      setTimeout(function() { window.close(); }, 500);
+    }
   }
-  setTimeout(function(){ window.close(); }, 1000);
+  window.addEventListener("message", onMessage);
 })();
 </script>
 <p>Authenticating...</p>
