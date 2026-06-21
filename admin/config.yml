@@ -17,21 +17,6 @@ collections:
         label: 搜索源配置列表
         file: sources.json
         format: json
-        # 自定义预览模板
-        preview_templates:
-          - name: sourceCard
-            label: 搜索源卡片预览
-            template: |
-              <div style="border:1px solid #eee; border-radius:10px; padding:16px; max-width:400px;">
-                <div style="display:flex; align-items:center; gap:12px; margin-bottom:8px;">
-                  <span style="font-size:24px;">{{iconName}}</span>
-                  <h3 style="margin:0; font-size:18px;">{{name}}</h3>
-                  <span style="background:#2563eb; color:#fff; font-size:12px; padding:2px 8px; border-radius:99px;">排序 {{order}}</span>
-                </div>
-                <div style="font-size:13px; color:#666; word-break:break-all;">
-                  {{urlScheme}}
-                </div>
-              </div>
         fields:
           - label: 搜索源列表
             name: sources
