@@ -49,13 +49,10 @@ export async function onRequestGet(context) {
 <html><body>
 <script>
 (function() {
-  var token = "${token}";
-  // 尝试所有 Decap CMS 可能的消息格式
   if (window.opener) {
-    window.opener.postMessage("token:" + token, "*");
-    window.opener.postMessage(token, "*");
+    window.opener.postMessage("${token}", "*");
   }
-  setTimeout(function(){ window.close(); }, 1500);
+  setTimeout(function(){ window.close(); }, 1000);
 })();
 </script>
 <p>Authenticating...</p>
