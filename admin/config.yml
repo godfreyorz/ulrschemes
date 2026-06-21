@@ -16,6 +16,44 @@ collections:
     file: sources.json
     preview_path: /
     fields:
+      - label: 搜索源列表
+        name: sources
+        widget: list
+        summary: "{{fields.name}}"
+        fields:
+          - label: 平台名称
+            name: name
+            widget: string
+          - label: 图标标识 iconName
+            name: iconName
+            widget: string
+          - label: 搜索链接模板 urlScheme
+            name: urlScheme
+            widget: text
+            hint: 关键词占位符固定使用 {query}，支持网页链接、App跳转协议
+          - label: 展示排序 order
+            name: order
+            widget: number
+            value_type: int
+            hint: 数字越小，前端展示越靠前
+backend:
+  name: github
+  repo: godfreyorz/urlschemes # 例：zhangsan/search-source-admin
+  branch: main
+  # 二选一：直接提交 / 自动生成PR
+  squash_merges: false
+  # open_authoring: true
+
+media_folder: static/upload
+public_folder: /upload
+
+collections:
+  - name: sources
+    label: 搜索源配置列表
+    format: json
+    file: sources.json
+    preview_path: /
+    fields:
       - label: 平台名称
         name: name
         widget: string

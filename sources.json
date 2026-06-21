@@ -1,3 +1,79 @@
+{
+  "sources": [
+    {
+      "name": "百度",
+      "iconName": "globe",
+      "urlScheme": "https://www.baidu.com/s?wd={query}",
+      "order": 0
+    },
+    {
+      "name": "Google",
+      "iconName": "magnifyingglass",
+      "urlScheme": "https://www.google.com/search?q={query}",
+      "order": 1
+    },
+    {
+      "name": "Maps",
+      "iconName": "map",
+      "urlScheme": "maps://?q={query}",
+      "order": 2
+    },
+    {
+      "name": "抖音",
+      "iconName": "video",
+      "urlScheme": "https://www.douyin.com/search/{query}",
+      "order": 3
+    },
+    {
+      "name": "小红书",
+      "iconName": "book.fill",
+      "urlScheme": "xhsdiscover://search/result?keyword={query}",
+      "order": 4
+    },
+    {
+      "name": "豆瓣电影",
+      "iconName": "film.fill",
+      "urlScheme": "https://search.douban.com/movie/subject_search?search_text={query}",
+      "order": 5
+    },
+    {
+      "name": "微博",
+      "iconName": "at",
+      "urlScheme": "sinaweibo://search?q={query}",
+      "order": 6
+    },
+    {
+      "name": "GitHub",
+      "iconName": "curlybraces",
+      "urlScheme": "https://github.com/search?q={query}",
+      "order": 7
+    },
+    {
+      "name": "YouTube",
+      "iconName": "play.rectangle.fill",
+      "urlScheme": "youtube://search?q={query}",
+      "order": 8
+    },
+    {
+      "name": "B站",
+      "iconName": "play.circle",
+      "urlScheme": "bilibili://search?keyword={query}",
+      "order": 9
+    },
+    {
+      "name": "商店",
+      "iconName": "bag",
+      "urlScheme": "macappstore://ax.search.itunes.apple.com/WebObjects/MZSearch.woa/wa/search?q={query}",
+      "order": 10
+    },
+    {
+      "name": "X",
+      "iconName": "x.square.fill",
+      "urlScheme": "https://x.com/search?q={query}",
+      "order": 11
+    }
+  ]
+}
 [
   {
     "name": "百度",

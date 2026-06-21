@@ -4,4 +4,7 @@
   Access-Control-Allow-Headers: Content-Type,Authorization
 
 /admin/*
-  Content-Security-Policy: default-src 'self'; script-src 'self' https://unpkg.com; style-src 'self' 'unsafe-inline'; connect-src 'self' https://api.github.com; img-src 'self' data:;
+  Content-Security-Policy: default-src 'self'; script-src 'self' https://unpkg.com; style-src 'self' 'unsafe-inline'; connect-src 'self' https://api.github.com https://api.netlify.com https://github.com; img-src 'self' data: https://avatars.githubusercontent.com;
+
+/sources.json
+  Cache-Control: public, max-age=60, s-maxage=300
