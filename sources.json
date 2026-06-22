@@ -83,6 +83,12 @@
       "name": "闲鱼",
       "iconName": "storefront",
       "order": 13
+    },
+    {
+      "name": "抖音",
+      "iconName": "music",
+      "urlScheme": "snssdk1128//search?keyword={query}",
+      "order": 14
     }
   ]
 }
