@@ -85,10 +85,16 @@
       "order": 13
     },
     {
-      "name": "抖音II",
-      "iconName": "video",
-      "urlScheme": "snssdk1128://search?keyword={query}",
+      "name": "抖音",
+      "iconName": "music",
+      "urlScheme": "snssdk1128//search?keyword={query}",
       "order": 14
+    },
+    {
+      "name": "测试",
+      "iconName": "film.fill",
+      "urlScheme": "https://www.douyin.com/search/{query}",
+      "order": 15
     }
   ]
 }
