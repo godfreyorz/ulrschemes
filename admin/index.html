@@ -3,32 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>搜索源配置管理后台</title>
-  <style>
-    /*
-      每个搜索源有 4 个字段（平台名称、iconName、urlScheme、order）
-      PreviewContainer 内所有 WidgetPreviewContainer 按 4 个一组交替背景色
-      1-4 浅蓝, 5-8 白色, 9-12 浅蓝, 13-16 白色 ...
-    */
-    [class*="PreviewContainer"] > [class*="WidgetPreviewContainer"]:nth-child(8n+1),
-    [class*="PreviewContainer"] > [class*="WidgetPreviewContainer"]:nth-child(8n+2),
-    [class*="PreviewContainer"] > [class*="WidgetPreviewContainer"]:nth-child(8n+3),
-    [class*="PreviewContainer"] > [class*="WidgetPreviewContainer"]:nth-child(8n+4) {
-      background: rgba(59, 130, 246, 0.06) !important;
-    }
-    [class*="PreviewContainer"] > [class*="WidgetPreviewContainer"]:nth-child(8n+5),
-    [class*="PreviewContainer"] > [class*="WidgetPreviewContainer"]:nth-child(8n+6),
-    [class*="PreviewContainer"] > [class*="WidgetPreviewContainer"]:nth-child(8n+7),
-    [class*="PreviewContainer"] > [class*="WidgetPreviewContainer"]:nth-child(8n) {
-      background: transparent !important;
-    }
-    /* 每组第1个字段（即每条的首字段）加上边框分隔 */
-    [class*="PreviewContainer"] > [class*="WidgetPreviewContainer"]:nth-child(4n+1) {
-      border-top: 2px solid #cbd5e1 !important;
-      padding-top: 8px !important;
-      margin-top: 4px !important;
-    }
-  </style>
+  <title>URLScheme管理后台</title>
 </head>
 <body>
   <!-- CMS自动挂载到该div -->
