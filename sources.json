@@ -86,7 +86,7 @@
     },
     {
       "name": "抖音II",
-      "iconName": "music",
+      "iconName": "video",
       "urlScheme": "snssdk1128//search?keyword={query}",
       "order": 14
     }
